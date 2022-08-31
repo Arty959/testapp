@@ -22,6 +22,8 @@ export function getUser(userId) {
   } 
   return user;
 }
-export function getUsers() {
+export async function getUsers() {
+  let response = await fetch("http://gaspar.p-host.in/getUsers");
+  let users = await response.json();
   return users;
 }
